@@ -11,12 +11,10 @@ menubtn.addEventListener('click', ()=>{
         menudrop.style.right = '-70vw';
         menudrop.style.visibility = 'hidden';
         menuclick = false;
-        console.log('here')
     }else{
         menudrop.style.visibility = 'visible';
         menudrop.style.right = '0';
         menuclick = true;
-        console.log('there')
     }
 
 })
