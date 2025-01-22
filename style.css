@@ -53,7 +53,7 @@ nav a{
     padding: 5px;
 }
 nav img{
-    height: 10vh;
+    height: 8vh;
 }
 
 nav li>a:hover{
@@ -100,6 +100,8 @@ nav li>a:hover{
     background-color: var(--bgc);
 }
 
+
+
 @media screen and (max-width: 768px){
     *{
         font-size: 1rem;
@@ -110,6 +112,9 @@ nav li>a:hover{
     .menudrop{
         width: 220px;
     }
+    /* nav img{
+        height: 8vh;
+    } */
 }
 @media screen and (min-width: 768px) and (max-width: 1100px){
     *{
