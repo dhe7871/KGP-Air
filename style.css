@@ -40,7 +40,7 @@ nav{
     padding-right: 4vw;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 9;
 }
 nav > ul{
     display: flex;
@@ -130,9 +130,91 @@ nav li>a:hover{
     padding-right: 1vw;
 }
 
+/* .footer{
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    border: 1px solid grey;
+}
+.foot-col-1{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.foot-col-2{
+    text-align: center;
+}
+.footer a{
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    text-decoration: none;
+}
+.exact-contact{
+    display: inline;
+}
+.contact-text{
+    display: none;
+} */
 
+
+.footer{
+    height: 20vh;
+    display: grid;
+    grid-template-areas: "call visit"
+                        "mail visit"
+                        "tm tm";
+    gap: 1vh 2vw;
+    border: 1px solid grey;
+    justify-items: center;
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+}
+.call{
+    grid-area: call;
+}
+.mail{
+    grid-area: mail;
+}
+.visit{
+    grid-area: visit;
+}
+.tm{
+    grid-area: tm;
+    text-align: center;
+}
+
+.footer a{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.footer a:hover, .footer a:hover span{
+    background-color: var(--hbgc);
+}
+
+.exact-contact{
+    display: inline;
+}
+.contact-text{
+    display: none;
+}
 
 @media screen and (max-width: 576px){
+    html{
+        font-size: 1rem;
+    }
+    nav > ul {
+        display: none;
+    }
+    .menudrop{
+        width: 220px;
+    }
+
     .row{
         margin-bottom: 2vh;
     }
@@ -148,7 +230,7 @@ nav li>a:hover{
         display: none;
         position: absolute;
         right: -100vw;
-        z-index: 9;
+        z-index: 5;
         border: 1px solid grey;
 
         transition: all 0.5s ease-in-out;
@@ -158,9 +240,15 @@ nav li>a:hover{
         right: 2vw;
     }
 
+    .exact-contact{
+        display: none;
+    }
+    .contact-text{
+        display: inline;
+    }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (min-width: 576px) and (max-width: 768px){
     html{
         font-size: 1rem;
     }

@@ -10,7 +10,17 @@
         The data is collected using a fixed wing time to time and updating the data on this website on real time.">
 
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined{
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+    </style>
+
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
     <title>KGP Air</title>
@@ -24,8 +34,10 @@
             <li><a href="#sensorow">Sensors</a></li>
             <li><a href="#datarow">Raw Data</a></li>
             <li><a href="#maprow">Visualize</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#contacts">Contact</a></li>
         </ul>
-        <span class="material-symbols-outlined" id="menubtn">menu</span>
+        <span class="material-symbols-outlined" style="font-size: 2rem;" id="menubtn">menu</span>
     </nav>
 
     <div class="menudrop" id="menudrop">
@@ -34,6 +46,8 @@
             <li><a href="#sensorow">Sensors</a></li>
             <li><a href="#datarow">Raw Data</a></li>
             <li><a href="#maprow">Visualize</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#contacts">Contact</a></li>
         </ul>
     </div>
 
@@ -81,7 +95,30 @@
         <div class="col1" style="background-image: url(map.jpg);"></div>
     </div>
 
-    
+    <div class="footer" id="contacts">
+        <div class="call">
+            <a href="tel:+918009840947" class="callhover">
+                <span class="material-symbols-outlined callhover">call</span>
+                <span class="exact-contact callhover">&nbsp;+91 8009840947</span>
+                <span class="contact-text callhover">&nbsp;Call Us</span>
+            </a>
+        </div>
+        <div class="mail">
+            <a href="mailto:kgp-air@gmail.com?subject=Inquiry&body=Hello, I have a question about...">
+                <span class="material-symbols-outlined mailhover">mail</span>
+                <span class="exact-contact mailhover">&nbsp;kgp-air@gmail.com</span>
+                <span class="contact-text mailhover">&nbsp;Email Us</span>
+            </a>
+        </div>
+        <div class="visit">
+            <p>Visiters: </p>
+        </div>
+        <div class="tm">
+            <span>Made by Dheeraj</span>
+        </div>
+
+
+    </div>
 
 
     <script src="script.js"></script>

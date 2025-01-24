@@ -6,15 +6,17 @@ let cardclick = {};
 const menudrop = document.getElementById('menudrop');
 const droplinks = document.querySelectorAll('.menudrop a');
 const menubtn = document.getElementById('menubtn');
-const mdscs = [...droplinks, menubtn]       //mdscs: menu drop state changers
+const mdscs = [menubtn, ...droplinks]       //mdscs: menu drop state changers
 
 mdscs.forEach(function (element){
     element.addEventListener('click', ()=>{
+        // event.preventDefault()
         if(menuclick){
             menudrop.style.right = '-70vw';
             menudrop.style.visibility = 'hidden';
             menuclick = false;
         }else{
+            console.log('comes here')
             menudrop.style.visibility = 'visible';
             menudrop.style.right = '2vw';
             menuclick = true;
@@ -37,7 +39,7 @@ if(mediaquery.matches){
             let maindiv = element.children[(index+1)%2];
             if(cardclick[index]){
                 maindiv.classList.remove('show');
-                maindiv.addEventListener('transitioned', ()=>{
+                maindiv.addEventListener('transitionend', ()=>{
                     maindiv.style.display = 'none';
                 }, {once: true})
 
@@ -48,7 +50,7 @@ if(mediaquery.matches){
                     if(cardclick[key] === true){
                         let tempdiv = cardrowsArray[key].children[(Number(key)+1)%2];
                         tempdiv.classList.remove('show');
-                        tempdiv.addEventListener('transitioned', ()=>{
+                        tempdiv.addEventListener('transitionend', ()=>{
                             tempdiv.style.display = 'none';
                         }, {once: true})
 
