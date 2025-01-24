@@ -130,34 +130,6 @@ nav li>a:hover{
     padding-right: 1vw;
 }
 
-/* .footer{
-    display: flex;
-    align-items: center;
-    height: 15vh;
-    border: 1px solid grey;
-}
-.foot-col-1{
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.foot-col-2{
-    text-align: center;
-}
-.footer a{
-    display: inline-flex;
-    align-items: center;
-    gap: 1vw;
-    text-decoration: none;
-}
-.exact-contact{
-    display: inline;
-}
-.contact-text{
-    display: none;
-} */
-
 
 .footer{
     height: 20vh;
@@ -232,14 +204,14 @@ nav li>a:hover{
         right: -100vw;
         z-index: 5;
         border: 1px solid grey;
-
-        transition: all 0.5s ease-in-out;
-    }
-    .col2.show{
-        display: block;
-        right: 2vw;
     }
 
+
+    .footer{
+        height: 15vh;
+        padding-top: 1vh;
+        padding-bottom: 2vh;
+    }
     .exact-contact{
         display: none;
     }

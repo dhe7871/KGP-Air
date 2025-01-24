@@ -1,7 +1,14 @@
 const bgc = '#05223d';
 const hbgc = '#28405e';
 let menuclick = false;
-let cardclick = {};
+let cardclick = {
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false
+};
+let scrollTop = 0;
 
 const menudrop = document.getElementById('menudrop');
 const droplinks = document.querySelectorAll('.menudrop a');
@@ -10,7 +17,6 @@ const mdscs = [menubtn, ...droplinks]       //mdscs: menu drop state changers
 
 mdscs.forEach(function (element){
     element.addEventListener('click', ()=>{
-        // event.preventDefault()
         if(menuclick){
             menudrop.style.right = '-70vw';
             menudrop.style.visibility = 'hidden';
@@ -38,29 +44,21 @@ if(mediaquery.matches){
         element.addEventListener('click',()=>{
             let maindiv = element.children[(index+1)%2];
             if(cardclick[index]){
-                maindiv.classList.remove('show');
-                maindiv.addEventListener('transitionend', ()=>{
-                    maindiv.style.display = 'none';
-                }, {once: true})
-
+                maindiv.style.right = '-100vw';
+                maindiv.style.display = 'none';
                 cardclick[index] = false;
             }else{
                 for(let key in cardclick){
-                    console.log('comes here')
-                    if(cardclick[key] === true){
-                        let tempdiv = cardrowsArray[key].children[(Number(key)+1)%2];
-                        tempdiv.classList.remove('show');
-                        tempdiv.addEventListener('transitionend', ()=>{
-                            tempdiv.style.display = 'none';
-                        }, {once: true})
-
+                    key = Number(key);
+                    if(cardclick[key]){
+                        let tempdiv = cardrowsArray[key].children[(key+1)%2];
+                        tempdiv.style.right = '-100vw';
+                        tempdiv.style.display = 'none';
                         cardclick[key] = false;
                     }
                 }
                 maindiv.style.display = 'block';
-                requestAnimationFrame(()=>{
-                    maindiv.classList.add('show');
-                });
+                maindiv.style.right = '2vw';
                 cardclick[index] = true;   
             }
         })
