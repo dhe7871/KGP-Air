@@ -137,7 +137,7 @@ nav li>a:hover{
     grid-template-areas: "call visit"
                         "mail visit"
                         "tm tm";
-    gap: 1vh 2vw;
+    gap: 0 2vw;
     border: 1px solid grey;
     justify-items: center;
     align-items: center;
@@ -209,7 +209,7 @@ nav li>a:hover{
 
     .footer{
         height: 15vh;
-        padding-top: 1vh;
+        padding-top: 1vw;
         padding-bottom: 2vh;
     }
     .exact-contact{
