@@ -16,7 +16,7 @@ mdscs.forEach(function (element){
             menuclick = false;
         }else{
             menudrop.style.visibility = 'visible';
-            menudrop.style.right = '0';
+            menudrop.style.right = '2vw';
             menuclick = true;
         }
     
