@@ -12,12 +12,14 @@
 ::-webkit-scrollbar-thumb:hover{
     background: rgb(189, 188, 188);
 }
-
+html{
+    scroll-behavior: smooth;
+    font-size: 1.2rem;
+}
 
 *{
     background-color: var(--bgc);
     color: whitesmoke;
-    font-size: 1.2rem;
     font-family:'Courier New', Courier, monospace;
     font-weight: 500;
 }
@@ -30,7 +32,6 @@ body{
 
 
 nav{
-    /* width: 100vw; */
     display: flex;
     justify-content:space-between;
     border-bottom: 1px solid grey;
@@ -39,6 +40,7 @@ nav{
     padding-right: 4vw;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 nav > ul{
     display: flex;
@@ -74,6 +76,7 @@ nav li>a:hover{
     position: fixed;
     right: -70vw;
     visibility: hidden;
+    z-index: 10;
 
     transition: all 0.5s ease-in-out;
 }
@@ -89,7 +92,6 @@ nav li>a:hover{
 .menudrop li{
     padding: 10px;
     background-color: var(--hbgc);
-    /* padding-left: 25px; */
 }
 
 .menudrop li:hover{
@@ -99,11 +101,67 @@ nav li>a:hover{
 .menudrop li:hover a{
     background-color: var(--bgc);
 }
+.row{
+    margin-top: 2vh;
+    margin-bottom: 8vh;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+}
+
+.col1{
+    width: 40vw;
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+
+}
+.col1:hover{
+    background-color: grey;
+    opacity: 0.6;
+}
+.col2{
+    width: 50vw;
+    height: 85vh;
+    align-content: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
 
 
+
+@media screen and (max-width: 576px){
+    .row{
+        margin-bottom: 2vh;
+    }
+    .col1{
+        width: 100vw;
+        height: 60vh;
+    }
+    .col2{
+        width: 80vw;
+        height: 60vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        display: none;
+        position: absolute;
+        right: -100vw;
+        z-index: 9;
+        border: 1px solid grey;
+
+        transition: all 0.5s ease-in-out;
+    }
+    .col2.show{
+        display: block;
+        right: 2vw;
+    }
+
+}
 
 @media screen and (max-width: 768px){
-    *{
+    html{
         font-size: 1rem;
     }
     nav > ul {
@@ -112,12 +170,9 @@ nav li>a:hover{
     .menudrop{
         width: 220px;
     }
-    /* nav img{
-        height: 8vh;
-    } */
 }
 @media screen and (min-width: 768px) and (max-width: 1100px){
-    *{
+    html{
         font-size: 1rem;
     }
     #menubtn{
