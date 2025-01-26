@@ -44,21 +44,32 @@ if(mediaquery.matches){
         element.addEventListener('click',()=>{
             let maindiv = element.children[(index+1)%2];
             if(cardclick[index]){
-                maindiv.style.right = '-100vw';
-                maindiv.style.display = 'none';
+                maindiv.classList.remove('slidein');
+                maindiv.classList.add('slideout');
+                setTimeout(()=>{
+                    maindiv.style.display = 'none';
+                },500);
+                
                 cardclick[index] = false;
             }else{
                 for(let key in cardclick){
                     key = Number(key);
                     if(cardclick[key]){
                         let tempdiv = cardrowsArray[key].children[(key+1)%2];
-                        tempdiv.style.right = '-100vw';
-                        tempdiv.style.display = 'none';
+                        tempdiv.classList.remove('slidein');
+                        tempdiv.classList.add('slideout');
+                        setTimeout(()=>{
+                            tempdiv.style.display = 'none';
+                        },500);
+                        
                         cardclick[key] = false;
                     }
                 }
                 maindiv.style.display = 'block';
-                maindiv.style.right = '2vw';
+                if(maindiv.classList.contains('slideout')){
+                    maindiv.classList.remove('slideout');
+                }
+                maindiv.classList.add('slidein');
                 cardclick[index] = true;   
             }
         })

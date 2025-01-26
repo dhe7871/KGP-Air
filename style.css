@@ -86,21 +86,19 @@ nav li>a:hover{
     padding-left: 25px;
 }
 .menudrop a{
+    display: inline-block;
+    width: 90%;
     text-decoration: none;
     background-color: var(--hbgc);
+    padding: 1.5vh 0 1.5vh 1.5vw;
 }
 .menudrop li{
-    padding: 10px;
     background-color: var(--hbgc);
 }
-
-.menudrop li:hover{
-    background-color: var(--bgc);
-
-}
-.menudrop li:hover a{
+.menudrop a:hover{
     background-color: var(--bgc);
 }
+
 .row{
     margin-top: 2vh;
     margin-bottom: 8vh;
@@ -128,6 +126,62 @@ nav li>a:hover{
     align-content: center;
     padding-left: 1vw;
     padding-right: 1vw;
+}
+
+.teamrow{
+    width: 100%;
+    height: 40vh;
+    margin-top: 2vh;
+    margin-bottom: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid grey;
+}
+.membercard{
+    width: 8rem;
+    height: 8rem;
+    border: 5px solid grey;
+    border-radius: 5.7rem;
+    /* z-index: 5; */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    /* background-color: grey; */
+    /* opacity: 0.6; */
+}
+
+.membercard > div{
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+    opacity: 0.9;
+    padding-top: 0.2rem;
+    padding-bottom: 0.8rem;
+    border-radius: 0 0 5.7rem 5.7rem;
+    font-size: 1rem;
+
+    visibility: hidden;
+}
+.membercard:hover div{
+    visibility: visible;
+}
+
+.movearrow{
+    width: 4vw;
+    height: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.movearrow div{
+    background-color: grey;
 }
 
 
@@ -176,6 +230,23 @@ nav li>a:hover{
     display: none;
 }
 
+
+
+@keyframes slidein-animation{
+    from{
+        right: -100vw;
+    }to{
+        right: 2vw;
+    }
+}
+@keyframes slideout-animation{
+    from{
+        right: 2vw;
+    }to{
+        right: -100vw;
+    }
+}
+
 @media screen and (max-width: 576px){
     html{
         font-size: 1rem;
@@ -204,8 +275,17 @@ nav li>a:hover{
         right: -100vw;
         z-index: 5;
         border: 1px solid grey;
-    }
 
+    }
+    .slidein{
+        right: 2vw;
+        animation: slidein-animation 0.5s ease-in-out;
+    }
+    .slideout{
+        
+        animation: slideout-animation 0.5s ease-in-out;
+        right: -100vw;
+    }
 
     .footer{
         height: 15vh;
