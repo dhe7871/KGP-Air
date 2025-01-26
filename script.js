@@ -91,12 +91,12 @@ let members = {
     2: {
         name: 'Sheetal Gautam',
         roll: '22AE10036',
-        image: 'profile_photo_1.jpg'
+        image: 'sheetal.jpg'
     },
     3: {
         name: 'Vijay Kumar',
         roll: '22AE10036',
-        image: 'profile_photo_1.jpg'
+        image: 'vijay.jpg'
     },
     4: {
         name: 'Katta Mohnapriya Nandini',
@@ -106,7 +106,7 @@ let members = {
     5: {
         name: 'Abhishek Lakhera',
         roll: '22AE10036',
-        image: 'profile_photo_1.jpg'
+        image: 'abhishek.jpg'
     },
     6: {
         name: 'Susmita Marandi',
@@ -171,9 +171,9 @@ movearrowArray.forEach((element, index) => {
 
         for(let i = 0; i < memberCount; i++){
             if(index){
-                revisedOrder = ((zeroIndexOrder + i + 1)%(memberCount + 1)) ? (zeroIndexOrder + i + 1)%(memberCount + 1) : 1;
+                revisedOrder = ((zeroIndexOrder + i) % memberCount) + 1;
             }else{
-                revisedOrder = ((zeroIndexOrder + i - 1)%memberCount) ? (zeroIndexOrder + i - 1)%memberCount : memberCount;
+                revisedOrder = ((zeroIndexOrder + i - 1 + memberCount - 1) % memberCount) + 1;
             }
             membercards[i].style.order = `${revisedOrder}`;
         }
