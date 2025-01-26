@@ -8,7 +8,6 @@ let cardclick = {
     3: false,
     4: false
 };
-let scrollTop = 0;
 
 const menudrop = document.getElementById('menudrop');
 const droplinks = document.querySelectorAll('.menudrop a');
@@ -75,3 +74,109 @@ if(mediaquery.matches){
         })
     });
 }
+
+
+//Members Data
+let members = {
+    0: {
+        name: 'Dheeraj',
+        roll: '22AE30009',
+        image: 'dheeraj.jpg'
+    },
+    1: {
+        name: 'Shivam Rathore',
+        roll: '22AE10036',
+        image: 'shivam.jpg'
+    },
+    2: {
+        name: 'Sheetal Gautam',
+        roll: '22AE10036',
+        image: 'profile_photo_1.jpg'
+    },
+    3: {
+        name: 'Vijay Kumar',
+        roll: '22AE10036',
+        image: 'profile_photo_1.jpg'
+    },
+    4: {
+        name: 'Katta Mohnapriya Nandini',
+        roll: '22AE10036',
+        image: 'profile_photo_1.jpg'
+    },
+    5: {
+        name: 'Abhishek Lakhera',
+        roll: '22AE10036',
+        image: 'profile_photo_1.jpg'
+    },
+    6: {
+        name: 'Susmita Marandi',
+        roll: '22AE10036',
+        image: 'profile_photo_1.jpg'
+    }
+}
+
+let memberCount = Object.keys(members).length;
+const movearrow = document.getElementsByClassName('movearrow');
+movearrow[1].style.order = `${memberCount + 1}`;
+
+const mediaquery1 = window.matchMedia('(max-width: 320px)');
+const mediaquery2 = window.matchMedia('(min-width: 320px) and (max-width: 425px)');
+const mediaquery3 = window.matchMedia('(min-width: 425px) and (max-width: 576px)');
+const mediaquery4 = window.matchMedia('(min-width: 576px) and (max-width: 768px)');
+
+let numVisMemCards = 5;
+const updateVisibleCards = ()=>{
+    if(mediaquery1.matches){
+        numVisMemCards = 1;
+    }else if(mediaquery2.matches){
+        numVisMemCards = 2;
+    }else if(mediaquery3.matches){
+        numVisMemCards = 3;
+    }else if(mediaquery4.matches){
+        numVisMemCards = 4;
+    }else{
+        numVisMemCards = 5;
+    }
+};
+updateVisibleCards();
+window.addEventListener('resize', updateVisibleCards);
+
+for(let i = 0; i < memberCount; i++){
+    let div = document.createElement('div');
+    div.innerHTML = `<div>${members[i]['name']}<br>(${members[i]['roll']})</div>`;
+    div.classList.add('membercard');
+    div.style.display = (i < numVisMemCards) ? 'flex' : 'none';
+    div.style.order = i + 1;
+    div.style.backgroundImage = `url(${members[i]['image']})`;
+
+    movearrow[1].insertAdjacentElement('beforebegin', div);
+}
+
+const membercards = document.getElementsByClassName('membercard');
+let movearrowArray = Array.from(movearrow);
+
+//utility function for updating member card visibility
+const updateMemberCards = ()=>{
+    for(let i = 0; i < memberCount; i++){
+        const revisedOrder = Number(membercards[i].style.order);
+        membercards[i].style.display = revisedOrder <= numVisMemCards ? 'flex' : 'none';
+    }
+};
+
+//Event listners for navigation
+movearrowArray.forEach((element, index) => {
+    element.addEventListener('click', ()=>{
+        let zeroIndexOrder = Number(membercards[0].style.getPropertyValue('order'));
+        let revisedOrder;
+
+        for(let i = 0; i < memberCount; i++){
+            if(index){
+                revisedOrder = ((zeroIndexOrder + i + 1)%(memberCount + 1)) ? (zeroIndexOrder + i + 1)%(memberCount + 1) : 1;
+            }else{
+                revisedOrder = ((zeroIndexOrder + i - 1)%memberCount) ? (zeroIndexOrder + i - 1)%memberCount : memberCount;
+            }
+            membercards[i].style.order = `${revisedOrder}`;
+        }
+        updateMemberCards();
+    });
+});
