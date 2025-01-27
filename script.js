@@ -81,37 +81,37 @@ let members = {
     0: {
         name: 'Dheeraj',
         roll: '22AE30009',
-        image: 'member_pics/dheeraj.jpg'
+        image: 'dheeraj.jpg'
     },
     1: {
         name: 'Shivam Rathore',
         roll: '22AE10036',
-        image: 'member_pics/shivam.jpg'
+        image: 'shivam.jpg'
     },
     2: {
         name: 'Sheetal Gautam',
         roll: '22AE10036',
-        image: 'member_pics/sheetal.jpg'
+        image: 'sheetal.jpg'
     },
     3: {
         name: 'Vijay Kumar',
         roll: '22AE10036',
-        image: 'member_pics/vijay.jpg'
+        image: 'vijay.jpg'
     },
     4: {
         name: 'Katta Mohnapriya Nandini',
         roll: '22AE10036',
-        image: 'member_pics/profile_photo_1.jpg'
+        image: 'profile_photo_1.jpg'
     },
     5: {
         name: 'Abhishek Lakhera',
         roll: '22AE10036',
-        image: 'member_pics/abhishek.jpg'
+        image: 'abhishek.jpg'
     },
     6: {
         name: 'Susmita Marandi',
         roll: '22AE10036',
-        image: 'member_pics/profile_photo_1.jpg'
+        image: 'profile_photo_1.jpg'
     }
 }
 
