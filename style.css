@@ -152,8 +152,6 @@ nav li>a:hover{
     display: flex;
     justify-content: center;
     align-items: end;
-
-    /* transition: order 0.2s ease-in-out; */
 }
 
 .membercard > div{
@@ -319,10 +317,6 @@ nav li>a:hover{
     .menudrop{
         width: 220px;
     }
-
-    /* .movearrow{
-        width: 5vw;
-    } */
 }
 @media screen and (min-width: 768px) and (max-width: 1100px){
     html{
