@@ -1,3 +1,5 @@
+/*Main CSS*/
+
 :root{
     --bgc: #05223d;
     --hbgc: #28405e;
@@ -143,7 +145,6 @@ nav li>a:hover{
     height: 8rem;
     border: 5px solid grey;
     border-radius: 5.7rem;
-    /* z-index: 5; */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,8 +153,7 @@ nav li>a:hover{
     justify-content: center;
     align-items: end;
 
-    /* background-color: grey; */
-    /* opacity: 0.6; */
+    /* transition: order 0.2s ease-in-out; */
 }
 
 .membercard > div{
@@ -342,4 +342,10 @@ nav li>a:hover{
     .menudrop{
         display: none;
     }
+}
+
+
+/*Different pages CSS*/
+.heading{
+    text-align: center;
 }
