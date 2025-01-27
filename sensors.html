@@ -141,13 +141,38 @@
             </a>
         </div>
         <div class="visit">
-            <p>Visiters: </p>
+            <p id="visiters">Visiters: </p>
         </div>
         <div class="tm">
             <span>Made by Dheeraj</span>
         </div>
     </div>
 
+
+    <script>
+        //Setting up visit Counter
+        const visiters = document.getElementById('visiters');
+        const url = 'https://counterapi-d6d4drfdawacbxa4.centralindia-01.azurewebsites.net/countUp/KGPAirCounter'
+
+        if(!localStorage.getItem('KGPAirCounter')){
+            fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                localStorage.setItem('KGPAirCounter', data.count);
+                visiters.innerText = `Visitors: ${localStorage.getItem('KGPAirCounter')}`;
+            })
+            .catch(error => {
+                console.error(`Error: ${error.message}`);
+            });
+        }else{
+            visiters.innerText = `Visitors: ${localStorage.getItem('KGPAirCounter')}`;
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 

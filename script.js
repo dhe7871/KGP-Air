@@ -117,6 +117,7 @@ let members = {
 
 let memberCount = Object.keys(members).length;
 const movearrow = document.getElementsByClassName('movearrow');
+console.log(movearrow)
 movearrow[1].style.order = `${memberCount + 1}`;
 
 const mediaquery1 = window.matchMedia('(max-width: 320px)');
