@@ -109,9 +109,9 @@ let members = {
         image: 'abhishek.jpg'
     },
     6: {
-        name: 'Susmita Marandi',
+        name: 'Sushmita Marandi',
         roll: '22AE10041',
-        image: 'profile_photo_1.jpg'
+        image: 'sushmita.jpg'
     }
 }
 
