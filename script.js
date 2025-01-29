@@ -99,9 +99,9 @@ let members = {
         image: 'vijay.jpg'
     },
     4: {
-        name: 'Katta Mohnapriya Nandini',
+        name: 'Katta Mohana Priya Nandini',
         roll: '22AE30015',
-        image: 'profile_photo_1.jpg'
+        image: 'nandini.jpg'
     },
     5: {
         name: 'Abhishek Lakhera',
