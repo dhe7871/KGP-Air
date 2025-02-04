@@ -192,17 +192,22 @@ nav li>a:hover{
 
 
 .footer{
-    height: 20vh;
+    height: 30vh;
     display: grid;
-    grid-template-areas: "call visit"
+    grid-template-areas: "contact-us contact-us"
+                        "call visit"
                         "mail visit"
                         "tm tm";
     gap: 0 2vw;
     border: 1px solid grey;
     justify-items: center;
     align-items: center;
-    padding-top: 2vh;
+    /* padding-top: 2vh; */
     padding-bottom: 1vh;
+}
+.contact-us{
+    grid-area: contact-us;
+    text-align: center;
 }
 .call{
     grid-area: call;
@@ -294,11 +299,11 @@ nav li>a:hover{
         right: -100vw;
     }
 
-    .footer{
-        height: 15vh;
+    /* .footer{
+        height: 30vh;
         padding-top: 1vw;
         padding-bottom: 2vh;
-    }
+    } */
     .exact-contact{
         display: none;
     }
@@ -342,4 +347,23 @@ nav li>a:hover{
 /*Different pages CSS*/
 .heading{
     text-align: center;
+}
+.sensor-card, .headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: 1px solid grey;
+
+    padding-right: 2vw;
+}
+.sensor-card{
+    margin-bottom: 2vh;
+}
+.headers{
+    justify-content: space-around;
+}
+.sensor-image{
+    width: 30vh;
 }
