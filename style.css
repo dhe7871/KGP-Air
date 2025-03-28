@@ -1,8 +1,10 @@
 /*Main CSS*/
 
 :root{
-    --bgc: #05223d;
-    --hbgc: #28405e;
+    /* --bgc: #05223d; */
+    --bgc: #093b43;
+    /* --hbgc: #28405e; */
+    --hbgc: #6a8083;
 }
 ::-webkit-scrollbar{
     width: 7px;
