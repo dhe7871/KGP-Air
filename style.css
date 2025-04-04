@@ -350,6 +350,8 @@ nav li>a:hover{
 .heading{
     text-align: center;
 }
+
+/*Sensor.html css*/
 .sensor-card, .headers{
     display: flex;
     justify-content: space-between;
@@ -368,4 +370,10 @@ nav li>a:hover{
 }
 .sensor-image{
     width: 30vh;
+}
+
+/*map.html CSS*/
+#map{
+    background-color: grey;
+    margin-bottom: 5vh;
 }

@@ -32,7 +32,8 @@ mdscs.forEach(function (element){
 
 const cardrows = document.getElementsByClassName('row');
 const cardrowsArray = Array.from(cardrows);
-const mediaquery = window.matchMedia('(max-width: 576px)');
+mediaquery = window.matchMedia('(max-width: 576px)');
+
 
 mediaquery.addEventListener('change', ()=>{
     location.reload()
@@ -117,7 +118,7 @@ let members = {
 
 let memberCount = Object.keys(members).length;
 const movearrow = document.getElementsByClassName('movearrow');
-console.log(movearrow)
+// console.log(movearrow)
 movearrow[1].style.order = `${memberCount + 1}`;
 
 const mediaquery1 = window.matchMedia('(max-width: 320px)');
