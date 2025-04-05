@@ -1,5 +1,18 @@
 const bgc = '#05223d';
 const hbgc = '#28405e';
+
+let key = '';
+document.addEventListener('keydown',(event)=>{
+    if(key == 'kgpair' && event.key === 'Enter'){
+        window.location.href = "uploadCSVFile.html"
+        key = '';
+    }else if(key.length > 10 || event.key === 'Enter'){
+        key = '';
+    }else{
+        key+=event.key;
+    }
+})
+
 let menuclick = false;
 let cardclick = {
     0: false,

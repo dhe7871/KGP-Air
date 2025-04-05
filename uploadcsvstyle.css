@@ -1,0 +1,25 @@
+.uploadsection{
+    height: 42vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    gap: 15vh;
+    align-items: center;
+    justify-content: center;
+}
+.uploadsection > input:hover{
+    cursor: pointer;
+}
+.uploadsection > button{
+    width: 25vh;
+    height: 8vh;
+    border: 1px solid grey;
+}
+.uploadsection > button:hover{
+    cursor: pointer;
+    /* box-shadow: 10px 10px 10px grey, -10px -10px 10px grey; */
+    background-color: var(--hbgc);
+    border-radius: 10px;
+}

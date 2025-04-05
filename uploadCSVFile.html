@@ -21,6 +21,7 @@
     </style>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="uploadcsvstyle.css">
     <link rel="shortcut icon" href="KGP_Air_logo.png" type="image/x-icon">
     <title>KGP Air</title>
 </head>
@@ -50,12 +51,17 @@
         </ul>
     </div>
 
-    <div class="heading"><h2>Access the Data via below link:</h2></div>
-    <div class="downloadlinks">
-        <ul id="ulist">
-
-        </ul>
+    <div class="heading">
+        <h1>Upload Processed CSV File</h1>
     </div>
+    
+    <div class="uploadsection">
+        <input type="file" name="csvfiles" id="csvfiles" accept=".csv" multiple>
+        <button onclick="uploadCSV()">Upload CSV Files</button>
+    </div>
+
+    <div class="uploaderrors"></div>
+
 
 
     <div class="footer" id="contacts">
@@ -106,8 +112,42 @@
         }else{
             visiters.innerText = `Visitors: ${localStorage.getItem('KGPAirCounter')}`;
         }
+
+        function uploadCSV(){
+            const uploaderrors = document.getElementsByClassName('uploaderrors')[0]
+            uploaderrors.innerText = 'Uploading Files....'
+
+            const files = document.getElementById('csvfiles').files;
+            const formData = new FormData();
+            
+            for(let i = 0; i < files.length; i++){
+                formData.append('files', files[i]);
+            }
+
+            fetch('http://127.0.0.1:8000/uploadCSVFiles',{
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Server Response:', data);
+                if(data['errormessages'].length){
+                    let str = '';
+                    for(value of data['errormessages']){
+                        str += `${value['filename']}: ${value['error']}\n`
+                    }
+                    uploaderrors.innerText = str;
+                    uploaderrors.style.color = 'red';
+                }else{
+                    uploaderrors.innerText = 'All files uploaded Successfully!';
+                    uploaderrors.style.color = 'green';
+                }
+                document.getElementById('csvfiles').value = '';
+            }).catch(err=>{
+                console.error('Error:', err);
+            });
+        }
     </script>
-    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 

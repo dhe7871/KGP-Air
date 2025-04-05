@@ -374,6 +374,15 @@ nav li>a:hover{
 
 /*map.html CSS*/
 #map{
-    background-color: grey;
     margin-bottom: 5vh;
+}
+
+/*data.html CSS*/
+#ulist div:hover{
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+}
+.downloadlinks{
+    height: 43vh;
 }
