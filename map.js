@@ -1,8 +1,10 @@
 let currentOverlay = null;
 let file_names = null;
+const baseapiurl = 'https://kgpairapi-hhbaa4angfgnhwee.centralindia-01.azurewebsites.net'
+// const baseapiurl = 'http://127.0.0.1:8000'
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://127.0.0.1:8000/availableFiles')
+    fetch(`${baseapiurl}/availableFiles`)
         .then(res => res.json())
         .then(data =>{
             file_names = data;
@@ -122,7 +124,7 @@ document.addEventListener('change', function(e){
             let longminmax= file_names['processed_files'][fileIndex]['locstats']['longminmax'];
             let meanlatlong= file_names['processed_files'][fileIndex]['locstats']['meanlatlong'];
 
-            fetch(`http://127.0.0.1:8000/overlayMap/${selectedFile}/${selectedGas}`)
+            fetch(`${baseapiurl}/overlayMap/${selectedFile}/${selectedGas}`)
             .then(res => res.blob())
             .then(blob =>{
                 const imageurl = URL.createObjectURL(blob);

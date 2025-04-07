@@ -1,7 +1,10 @@
 let file_names = null;
 let filenames  = null;
+const baseapiurl = 'https://kgpairapi-hhbaa4angfgnhwee.centralindia-01.azurewebsites.net'
+// const baseapiurl = 'http://127.0.0.1:8000'
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://127.0.0.1:8000/availableFiles')
+    fetch(`${baseapiurl}/availableFiles`)
         .then(res => res.json())
         .then(data =>{
             file_names = data;
@@ -21,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filenames.forEach(filename =>{
                 let div = document.getElementById(filename);
                 div.addEventListener('click',()=>{
-                    fetch(`http://127.0.0.1:8000/getCSV/${filename}`)
+                    fetch(`${baseapiurl}/getCSV/${filename}`)
                     .then(res => res.blob())
                     .then(blob => {
                         const url = window.URL.createObjectURL(blob);
