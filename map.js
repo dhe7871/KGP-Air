@@ -179,9 +179,8 @@ document.addEventListener('change', function(e){
                                             <img src="${imageUrl}" width="auto" height="300vh" alt="legend_image">
                                             `
                                             legendcontainer.width = "auto";
-                                        }
-
-                                        
+                                            legendcontainer.style.visibility = 'visible';
+                                        } 
                                     }
                                 }  
                             })
@@ -194,6 +193,10 @@ document.addEventListener('change', function(e){
             if(currentOverlay){
                 map.removeLayer(currentOverlay)
                 currentOverlay = null;
+            }
+            const legendcontainer = document.getElementById('legendcontainer');
+            if(legendcontainer){
+                legendcontainer.style.visibility = 'hidden';
             }
         }
     }
