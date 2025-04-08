@@ -16,6 +16,7 @@
     width: 25vh;
     height: 8vh;
     border: 1px solid grey;
+    background-color: var(--bgc);
 }
 .uploadsection > button:hover{
     cursor: pointer;

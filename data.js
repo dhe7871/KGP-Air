@@ -1,7 +1,7 @@
 let file_names = null;
 let filenames  = null;
 const baseapiurl = 'https://kgpairapi-hhbaa4angfgnhwee.centralindia-01.azurewebsites.net'
-// const baseapiurl = 'http://127.0.0.1:8000'
+// const baseapiurl = 'http://127.0.0.1:8000';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch(`${baseapiurl}/availableFiles`)
