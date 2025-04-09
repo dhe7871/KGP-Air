@@ -390,7 +390,105 @@ nav li>a:hover{
 }
 
 /*sensor CSS here*/
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+} */
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.product-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 20px #6a808343; */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* overflow-y: auto; */
+
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #e5e7eb;
+}
+
+.product-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    transition: bottom 0.3s ease;
+    z-index: 2;
+}
+
+.product-card:hover .product-name {
+    bottom: 87%;
+}
+
+.product-details {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    /* background: #6a8083d4; */
+    color: #fff;
+    padding: 12px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow-y: auto;
+
+}
+
+.product-card:hover .product-details {
+    top:13%;
+    opacity: 1;
+}
+
+
+.product-details::-webkit-scrollbar {
+    width: 4px;
+}
+.product-details::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* border-radius: 4px; */
+}
 
 
 

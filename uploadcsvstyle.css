@@ -4,7 +4,6 @@
     margin-bottom: 2vh;
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
     gap: 15vh;
     align-items: center;
     justify-content: center;
@@ -20,7 +19,6 @@
 }
 .uploadsection > button:hover{
     cursor: pointer;
-    /* box-shadow: 10px 10px 10px grey, -10px -10px 10px grey; */
     background-color: var(--hbgc);
     border-radius: 10px;
 }

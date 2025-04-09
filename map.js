@@ -87,14 +87,7 @@ L.Control.gasDropdown({position: 'topright'}).addTo(map);
 L.Control.LegendControl = L.Control.extend({
     onAdd: function(map){
         const div = L.DomUtil.create('div', 'legend-control');
-        // div.innerHTML = `
-        //     <div>
-        // `
         div.id = 'legendcontainer';
-        // img.src = '';
-        // img.style.width = 'auto';
-        // img.style.height = '50vh';
-       
         return div;
     }
 });
