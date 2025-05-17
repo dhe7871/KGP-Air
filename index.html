@@ -55,10 +55,11 @@
         <div class="col2">
             <h1>Introduction</h1>
             <p>
-                A student group project to monitor and collect the <i>Pollution Data using Fixed Wing Drone</i> over and
-                around the <i>Indian Institute of Technology, Kharagpur</i> campus.
-                This Project is a part of <i>Flight Testing Laboratory</i> course conducted by the <i>Department of
-                    Aerospace Engineering, IIT Kharagpur</i> and taken by <i>Prof. Sandeep Saha.</i>
+                This student group project focuses on monitoring and collection of <i>Pollution Data using Fixed Wing Drone</i> over and
+                around the <i>Indian Institute of Technology, Kharagpur</i> campus.<br>
+                This Project is undertaken as a part of <i>Flight Testing Laboratory</i> course offered by <i>Department
+                of Aerospace Engineering, IIT Kharagpur.</i> It is guided by <i>Prof. Sandeep Saha,</i> with support of
+                Teacher Assistants <i>Aman Kumar Singh</i> and <i>Ved Amit Takte</i>.
             </p>
         </div>
     </div>
@@ -105,7 +106,9 @@
     </div>
 
     <div class="footer" id="contacts">
-        <div class="contact-us"><h1>Contact Us</h1></div>
+        <div class="contact-us">
+            <h1>Contact Us</h1>
+        </div>
         <div class="call">
             <a href="tel:+918009840947" class="callhover">
                 <span class="material-symbols-outlined callhover">call</span>
@@ -134,19 +137,19 @@
         const url = 'https://counterapi-d6d4drfdawacbxa4.centralindia-01.azurewebsites.net/countUp/KGPAirCounter'
 
         fetch(url)
-        .then(response => {
-            if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            visiters.innerText = `Visiters: ${data.count}`;
-            localStorage.setItem('KGPAirCounter', data.count);
-        })
-        .catch(error => {
-            console.error(`Error: ${error.message}`);
-        });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                visiters.innerText = `Visiters: ${data.count}`;
+                localStorage.setItem('KGPAirCounter', data.count);
+            })
+            .catch(error => {
+                console.error(`Error: ${error.message}`);
+            });
     </script>
     <script src="script.js"></script>
 </body>
