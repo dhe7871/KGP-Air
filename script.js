@@ -185,7 +185,7 @@ movearrowArray.forEach((element, index) => {
         let revisedOrder;
 
         for(let i = 0; i < memberCount; i++){
-            if(index){
+            if(!index){
                 revisedOrder = ((zeroIndexOrder + i) % memberCount) + 1;
             }else{
                 revisedOrder = ((zeroIndexOrder + i - 1 + memberCount - 1) % memberCount) + 1;
